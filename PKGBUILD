@@ -454,7 +454,7 @@ case $_basever in
         0002-mm-Support-soft-dirty-flag-read-with-reset.patch
     )
     sha256sums=('7d0df6f2bf2384d68d0bd8e1fe3e071d64364dcdc6002e7b5c87c92d48fac366'
-            'a41e4a4eb50c670a48f9c9bcc32ccb2195c02e3caa823a6aaed04537fdd8b73d'
+            'SKIP'
             'SKIP'
             '0a7c40402715f8817c4f40173ca1fa8af84c56f7658be281e5424319000370b6'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -514,7 +514,7 @@ case $_basever in
         0002-mm-Support-soft-dirty-flag-read-with-reset.patch
     )
     sha256sums=('3f6baa97f37518439f51df2e4f3d65a822ca5ff016aa8e60d2cc53b95a6c89d9'
-            '5e70a8b3c5fc6bc7eb0bc55b455d373b031b4ed6c73a961fa84378b6baabfde9'
+            'SKIP'
             'SKIP'
             'fcfb29005032125010bcf18ce2f177af7c84c74cff729de8f0cc3e4a552a59a4'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
