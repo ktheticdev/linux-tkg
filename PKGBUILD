@@ -101,7 +101,7 @@ case $_basever in
         	0009-bmq_v5.4-r2.patch
         	0012-linux-hardened.patch
 	)
-	sha256sums=('bf338980b1670bca287f9994b7441c2361907635879169c64ae78364efc5f491'
+	sha256sums=('SKIP'
             'cb0aba28871c9c1ff3d7a43f0fad7ffe466e7fa1112b2f00c89eabb7d2f9a637'
             #'SKIP'
             'b0c4c60669f47ba4d3d1388368a5f9790aa697af42c917ed2ef177f111336d8b'
@@ -155,7 +155,7 @@ case $_basever in
         	0012-linux-hardened.patch
 	)
 	sha256sums=('de8163bb62f822d84f7a3983574ec460060bf013a78ff79cd7c979ff1ec1d7e0'
-            '66a0173a13cd58015f5bf1b14f67bfa15dc1db5d8e7225fcd95ac2e9a5341653'
+            'SKIP'
             'SKIP'
             '357a0db541f7de924ed89c21f5a6f3de4889b134c5d05d5e32ccd234bd81eedf'
             '15ce09447b7e9b28425c1df5961c955378f2829e4115037337eef347b1db3d9d'
@@ -210,7 +210,7 @@ case $_basever in
         	#0012-linux-hardened.patch
 	)
 	sha256sums=('e7f75186aa0642114af8f19d99559937300ca27acaf7451b36d4f9b0f85cf1f5'
-            '5b558a40c2fdad2c497fe0b1a64679313fd5a7ccbaecef8803d49b3baaccbacd'
+            'SKIP'
             'SKIP'
             'f4754fbe2619ef321e49a7b560fad058b2459d17cff0b90e839cb475f46e8b63'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -261,9 +261,9 @@ case $_basever in
 	        #0012-linux-hardened.patch
 	)
 	sha256sums=('3239a4ee1250bf2048be988cc8cb46c487b2c8a0de5b1b032d38394d5c6b1a06'
-            '46c520da2db82d8f9a15c2117d3a50e0faaaf98f05bd4ea1f3105e2724f207d6'
             'SKIP'
-            'ce2711b9d628e71af62706b830c2f259a43ad1e614871dd90bcb99d8709e1dab'
+            'SKIP'
+            'SKIP'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
             '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
             'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
@@ -318,7 +318,6 @@ case $_basever in
         0012-linux-hardened.patch
         0012-misc-additions.patch
     )
-    sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             '279c077e7e1f175f7490ba46b621cb9964fd4e7573953f2ad96f89b70e18f102'
             'SKIP'
             'f2d15531096e97239a67f7642d85666a2f27c5e053b38ff9a2aa704dfc388f8a'
