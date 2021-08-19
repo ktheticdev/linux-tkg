@@ -597,7 +597,7 @@ prepare() {
 
   ln -s "${_where}/customization.cfg" "${srcdir}" # workaround
 
-  cd "/build/linux-tkg/src/linux-5.13"
+  cd "/startdir/linux-tkg/src/linux-5.13"
 
   _tkg_srcprep
 }
