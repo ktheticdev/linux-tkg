@@ -318,6 +318,7 @@ case $_basever in
         0012-linux-hardened.patch
         0012-misc-additions.patch
     )
+sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             '279c077e7e1f175f7490ba46b621cb9964fd4e7573953f2ad96f89b70e18f102'
             'SKIP'
             'f2d15531096e97239a67f7642d85666a2f27c5e053b38ff9a2aa704dfc388f8a'
