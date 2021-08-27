@@ -8,4 +8,7 @@ jobs:
       image: archlinux:latest
     steps:
       - name: SSH to GitHub Actions
-        uses: P3TERX/ssh2actions@v1.0.0
+        run: |
+          pacman -S openssh tmate
+          ssh-keygen -N "" -f ~/.ssh/id_rsa
+          tmate
