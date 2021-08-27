@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: SSH to GitHub Actions
         run: |
+          whoami
           pacman -Syu --noconfirm openssh tmate
-          ssh-keygen -N "" -f ~/.ssh/id_rsa
+          ssh-keygen -N "" -f /root/.ssh/id_rsa
           tmate
