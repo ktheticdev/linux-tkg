@@ -59,7 +59,7 @@ else
 fi
 pkgname=("${pkgbase}" "${pkgbase}-headers")
 pkgver="${_basekernel}"."${_sub}"
-pkgrel=192
+pkgrel=194
 pkgdesc='Linux-tkg'
 arch=('x86_64') # no i686 in here
 url="http://www.kernel.org/"
@@ -87,7 +87,7 @@ case $_basever in
         	0002-clear-patches.patch
         	0003-glitched-base.patch
         	0003-glitched-cfs.patch
-        	0003-cacule-5.4.patch
+        	0003-glitched-cfs-additions.patch
         	0004-glitched-ondemand-muqss.patch
         	0004-glitched-muqss.patch
         	0004-5.4-ck1.patch
@@ -101,8 +101,8 @@ case $_basever in
         	0009-bmq_v5.4-r2.patch
         	0012-linux-hardened.patch
 	)
-	sha256sums=('SKIP'
-            'cb0aba28871c9c1ff3d7a43f0fad7ffe466e7fa1112b2f00c89eabb7d2f9a637'
+	sha256sums=('bf338980b1670bca287f9994b7441c2361907635879169c64ae78364efc5f491'
+            '556f5a86611edd8a63d4a6aa0142d61c77914c902c12b31d6812e65b79a046c2'
             #'SKIP'
             'b0c4c60669f47ba4d3d1388368a5f9790aa697af42c917ed2ef177f111336d8b'
             '1f4a20d6eaaa0d969af93152a65191492400c6aa838fc1c290b0dd29bb6019d8'
@@ -110,9 +110,9 @@ case $_basever in
             '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
             '31dc68e84aecfb7d069efb1305049122c65694676be8b955634abcf0675922a2'
             'd02bf5ca08fd610394b9d3a0c3b176d74af206f897dee826e5cbaec97bb4a4aa'
-            'bc1c13ca07e471845e561d18dad6afcb3b2b93f17f9216f0a48a29f24f9a4e09'
+            '886ed1d648938d776a795d289af0c83207c1c70c00cd9d79560951d0bc951e25'
             '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            '50f99a263482289cd6d5fe9415b4c287afb376f38af711756e808ccb10522885'
+            '9420cf1a04740956008e535725ae38a2f759188841be3776447a4eb635fa5158'
             'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
             'bc69d6e5ee8172b0242c8fa72d13cfe2b8d2b6601468836908a7dfe8b78a3bbb'
             '815974c65f47301d2a5d1577bf95e8a4b54cad7d77f226e0065f83e763837c48'
@@ -155,7 +155,7 @@ case $_basever in
         	0012-linux-hardened.patch
 	)
 	sha256sums=('de8163bb62f822d84f7a3983574ec460060bf013a78ff79cd7c979ff1ec1d7e0'
-            'SKIP'
+            '66a0173a13cd58015f5bf1b14f67bfa15dc1db5d8e7225fcd95ac2e9a5341653'
             'SKIP'
             '357a0db541f7de924ed89c21f5a6f3de4889b134c5d05d5e32ccd234bd81eedf'
             '15ce09447b7e9b28425c1df5961c955378f2829e4115037337eef347b1db3d9d'
@@ -210,7 +210,7 @@ case $_basever in
         	#0012-linux-hardened.patch
 	)
 	sha256sums=('e7f75186aa0642114af8f19d99559937300ca27acaf7451b36d4f9b0f85cf1f5'
-            'SKIP'
+            '5b558a40c2fdad2c497fe0b1a64679313fd5a7ccbaecef8803d49b3baaccbacd'
             'SKIP'
             'f4754fbe2619ef321e49a7b560fad058b2459d17cff0b90e839cb475f46e8b63'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -261,9 +261,9 @@ case $_basever in
 	        #0012-linux-hardened.patch
 	)
 	sha256sums=('3239a4ee1250bf2048be988cc8cb46c487b2c8a0de5b1b032d38394d5c6b1a06'
+            '46c520da2db82d8f9a15c2117d3a50e0faaaf98f05bd4ea1f3105e2724f207d6'
             'SKIP'
-            'SKIP'
-            'SKIP'
+            'ce2711b9d628e71af62706b830c2f259a43ad1e614871dd90bcb99d8709e1dab'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
             '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
             'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
@@ -300,7 +300,6 @@ case $_basever in
         0003-glitched-base.patch
         0003-glitched-cfs.patch
         0003-glitched-cfs-additions.patch
-        0003-cacule-5.10.patch
         0004-glitched-ondemand-muqss.patch
         0004-glitched-muqss.patch
         0004-5.10-ck1.patch
@@ -318,8 +317,8 @@ case $_basever in
         0012-linux-hardened.patch
         0012-misc-additions.patch
     )
-sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
-            '279c077e7e1f175f7490ba46b621cb9964fd4e7573953f2ad96f89b70e18f102'
+    sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
+            '3554806546fda64ed04407804155b53314d2efe103ed123fae33f309461cafa1'
             'SKIP'
             'f2d15531096e97239a67f7642d85666a2f27c5e053b38ff9a2aa704dfc388f8a'
             'eb1da1a028a1c967222b5bdac1db2b2c4d8285bafd714892f6fc821c10416341'
@@ -330,7 +329,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             'a447e697cb744283e3e89f300c8a8bda04a9c8108f03677fb48bf9675c992cbd'
             '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
             'e5ea0bb25ee294c655ac3cc30e1eea497799826108fbfb4ef3258c676c1e8a12'
-            '502ca6657551a08fd626c098e2bef79b60e3033c1f201577e4cc5eea4dbf7f85'
             'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
             '2bbbac963b6ca44ef3f8a71ec7c5cad7d66df860869a73059087ee236775970a'
             'e00096244e5cddaa5500d08b5f692fd3f25be9401dfa3b0fc624625ff2f5e198'
@@ -431,7 +429,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0003-glitched-base.patch
         0003-glitched-cfs.patch
         0003-glitched-cfs-additions.patch
-        0003-cacule-5.12.patch
         0004-glitched-ondemand-muqss.patch
         0004-glitched-muqss.patch
         0004-5.12-ck1.patch
@@ -454,7 +451,7 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0002-mm-Support-soft-dirty-flag-read-with-reset.patch
     )
     sha256sums=('7d0df6f2bf2384d68d0bd8e1fe3e071d64364dcdc6002e7b5c87c92d48fac366'
-            'SKIP'
+            'a41e4a4eb50c670a48f9c9bcc32ccb2195c02e3caa823a6aaed04537fdd8b73d'
             'SKIP'
             '0a7c40402715f8817c4f40173ca1fa8af84c56f7658be281e5424319000370b6'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -464,7 +461,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             'a447e697cb744283e3e89f300c8a8bda04a9c8108f03677fb48bf9675c992cbd'
             '5efd40c392ece498d2d43d5443e6537c2d9ef7cf9820d5ce80b6577fc5d1a4b2'
             'e5ea0bb25ee294c655ac3cc30e1eea497799826108fbfb4ef3258c676c1e8a12'
-            '912786eae40b7993ca04ef3eb86e6f03c95d60749819cb2c75260b63c978989c'
             'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
             '3cdc90f272465c2edb6bac8a3c90f2e098ba8ca73d27e4c0cadf70b7e87641ea'
             'c8b0f2a1ef84b192c67b61c5a60426a640d5a83ac55a736929f0c4e6ec7b85f8'
@@ -497,7 +493,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0003-glitched-base.patch
         0003-glitched-cfs.patch
         0003-glitched-cfs-additions.patch
-        0003-cacule-5.13.patch
         0005-glitched-pds.patch
         0006-add-acs-overrides_iommu.patch
         0007-v5.13-fsync.patch
@@ -506,7 +501,7 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0008-5.13-bcachefs.patch
         0009-glitched-ondemand-bmq.patch
         0009-glitched-bmq.patch
-        0009-prjc_v5.13-r2.patch
+        0009-prjc_v5.13-r3.patch
         #0012-linux-hardened.patch
         0012-misc-additions.patch
         # MM Dirty Soft for WRITE_WATCH support in Wine
@@ -514,9 +509,9 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0002-mm-Support-soft-dirty-flag-read-with-reset.patch
     )
     sha256sums=('3f6baa97f37518439f51df2e4f3d65a822ca5ff016aa8e60d2cc53b95a6c89d9'
+            'db626e41d43e74f5c26901dc71e19c6792eed902f44abf0a509ca4a9a2617cb8'
             'SKIP'
-            'SKIP'
-            'SKIP'
+            '06ad99b810943f7ce4650fe656156f4b40d11fabd9b89e2b1beff06c46836efc'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
             '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
             'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
@@ -524,7 +519,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             'ef48eea194c1c101de0461572eaf311f232fee55c155c52904b20085a92db680'
             '5efd40c392ece498d2d43d5443e6537c2d9ef7cf9820d5ce80b6577fc5d1a4b2'
             'e5ea0bb25ee294c655ac3cc30e1eea497799826108fbfb4ef3258c676c1e8a12'
-            'd498816b89a46bde060cbea77313ec14e293f820ea76c682870e894e6ff4af22'
             'fca63d15ca4502aebd73e76d7499b243d2c03db71ff5ab0bf5cf268b2e576320'
             '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
             '89d837bfea3515504b1c99fc881ebdc4f15e2999558127a263e795fc69408a39'
@@ -533,7 +527,7 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
             'b0004bc559653fd8719b8adcfa1ead1075db3425d30d7d7adb8cbc6296386a8f'
             '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
             'a557b342111849a5f920bbe1c129f3ff1fc1eff62c6bd6685e0972fc88e39911'
-            '18ac1705203969485d5811c93fdecb9d042020cc69567b579b32053ac4ceb1c9'
+            'ccf925b6326a8cf63d28c00a7645a0fa120608bfcf5dabb77a4522f249aa306d'
             '7fb1104c167edb79ec8fbdcde97940ed0f806aa978bdd14d0c665a1d76d25c24'
             'b1c6599d0e1ac9b66898d652ed99dae3fb8676d840a43ffa920a78d96e0521be'
             'b0319a7dff9c48b2f3e3d3597ee154bf92223149a633a8b7ce4026252db86da6')
@@ -554,7 +548,6 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0003-glitched-base.patch
         0003-glitched-cfs.patch
         0003-glitched-cfs-additions.patch
-        #0003-cacule-5.14.patch
         #0005-glitched-pds.patch
         0006-add-acs-overrides_iommu.patch
         #0007-v5.14-fsync.patch
@@ -570,7 +563,7 @@ sha256sums=('dcdf99e43e98330d925016985bfbc7b83c66d367b714b2de0cbbfcbf83d8ca43'
         0001-mm-Support-soft-dirty-flag-reset-for-VA-range.patch
         0002-mm-Support-soft-dirty-flag-read-with-reset.patch
     )
-    sha256sums=('d8f0bfe8d595445a20352de9f6a0de370f6699ca1342861fcbd975c2184158f8'
+    sha256sums=('cde1ef122a52199dc36fda0ba1127dbbb936c1687024ef6209d1f068de2674e0'
             'SKIP'
             '6188d6d4c94ead7ef4319f944cef8198f15e1f00a73633bce86e98383f11d771'
             '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
@@ -597,7 +590,7 @@ prepare() {
 
   ln -s "${_where}/customization.cfg" "${srcdir}" # workaround
 
-  cd "/startdir/linux-tkg/src/linux-5.13"
+  cd "${srcdir}/${_srcpath}"
 
   _tkg_srcprep
 }
